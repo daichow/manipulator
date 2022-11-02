@@ -1,0 +1,22 @@
+version: "2.1"
+
+services:
+
+  ros2-dev:
+    build:
+      context: .
+      dockerfile: ./docker/ros2-dev.dockerfile
+    container_name: ros2-dev
+    restart: always
+    stdin_open: true
+    tty: true
+    environment:
+      - ROS_DOMAIN_ID=8
+      - DISPLAY
+      - QT_X11_NO_MITSHM=1
+    devices:
+      - /dev/dri:/dev/dri
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - .:/ros2_ws/src
+    command: sleep infinity
