@@ -1,4 +1,4 @@
-# bootcamp-intro
+# manipulator
 
 1. Install Docker Engine (not Docker Desktop, they are different
 in ways that will complicate this setup from working as 
@@ -34,16 +34,6 @@ Access the terminal within the docker environment
 
 ```
 docker exec -it ros1-dev bash
-```
-
-## Start up ROS2
-
-```
-docker compose --file docker-compose.ros2-dev.yaml up
-```
-
-```
-docker exec -it ros2-dev bash
 ```
 
 
