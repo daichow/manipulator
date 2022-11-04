@@ -31,31 +31,20 @@
         <joint name="shoulder_joint" value="-0.0174"/>
         <joint name="top_wrist_joint" value="0.2256"/>
     </group_state>
+    <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
+    <virtual_joint name="turtlebot" type="fixed" parent_frame="arm" child_link="base_link"/>
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="arm_base" link2="base_link" reason="Adjacent"/>
     <disable_collisions link1="arm_base" link2="bicep" reason="Adjacent"/>
-    <disable_collisions link1="arm_base" link2="front_left_wheel" reason="Never"/>
-    <disable_collisions link1="arm_base" link2="front_right_wheel" reason="Never"/>
-    <disable_collisions link1="arm_base" link2="rear_left_wheel" reason="Never"/>
-    <disable_collisions link1="arm_base" link2="rear_right_wheel" reason="Never"/>
-    <disable_collisions link1="base_link" link2="front_left_wheel" reason="Adjacent"/>
-    <disable_collisions link1="base_link" link2="front_right_wheel" reason="Adjacent"/>
-    <disable_collisions link1="base_link" link2="rear_left_wheel" reason="Adjacent"/>
-    <disable_collisions link1="base_link" link2="rear_right_wheel" reason="Adjacent"/>
+    <disable_collisions link1="arm_base" link2="wheel_left_link" reason="Never"/>
+    <disable_collisions link1="arm_base" link2="wheel_right_link" reason="Never"/>
+    <disable_collisions link1="base_link" link2="wheel_left_link" reason="Adjacent"/>
+    <disable_collisions link1="base_link" link2="wheel_right_link" reason="Adjacent"/>
     <disable_collisions link1="bicep" link2="bottom_wrist" reason="Adjacent"/>
-    <disable_collisions link1="bicep" link2="front_left_wheel" reason="Never"/>
-    <disable_collisions link1="bicep" link2="front_right_wheel" reason="Never"/>
-    <disable_collisions link1="bicep" link2="rear_left_wheel" reason="Never"/>
-    <disable_collisions link1="bicep" link2="rear_right_wheel" reason="Never"/>
+    <disable_collisions link1="bicep" link2="wheel_left_link" reason="Never"/>
+    <disable_collisions link1="bicep" link2="wheel_right_link" reason="Never"/>
     <disable_collisions link1="bottom_wrist" link2="elbow" reason="Adjacent"/>
-    <disable_collisions link1="bottom_wrist" link2="rear_left_wheel" reason="Never"/>
-    <disable_collisions link1="bottom_wrist" link2="rear_right_wheel" reason="Never"/>
     <disable_collisions link1="bottom_wrist" link2="top_wrist" reason="Never"/>
     <disable_collisions link1="elbow" link2="top_wrist" reason="Adjacent"/>
-    <disable_collisions link1="front_left_wheel" link2="front_right_wheel" reason="Never"/>
-    <disable_collisions link1="front_left_wheel" link2="rear_left_wheel" reason="Never"/>
-    <disable_collisions link1="front_left_wheel" link2="rear_right_wheel" reason="Never"/>
-    <disable_collisions link1="front_right_wheel" link2="rear_left_wheel" reason="Never"/>
-    <disable_collisions link1="front_right_wheel" link2="rear_right_wheel" reason="Never"/>
-    <disable_collisions link1="rear_left_wheel" link2="rear_right_wheel" reason="Never"/>
+    <disable_collisions link1="wheel_left_link" link2="wheel_right_link" reason="Never"/>
 </robot>
